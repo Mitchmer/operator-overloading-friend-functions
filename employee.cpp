@@ -1,26 +1,22 @@
 #include "employee.h"
 
 /*
-***************************************
-* Constructor Definitions             *
-***************************************
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=  Date Class                                            -=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 */
-
-//---------------------------
-// Default Constructor
-//---------------------------
-// Initializes each member
-//   to a basic default value
-//---------------------------
+//#########################################
+//  Constructors
+//#########################################
 
 Date::Date() 
 	: month{1}, day{1}, year{2000} {}
 Date::Date(int m, int d, int y) 
 	: month{m}, day{d}, year{y} {}
 
-//-------------------------------
-//  Print
-//-------------------------------
+//#########################################
+//  Member Functions
+//#########################################
 
 void Date::displayDate() {
 	cout << month << "/" << day << "/" << year << endl;
@@ -28,21 +24,22 @@ void Date::displayDate() {
 }
 
 /*
-***************************************
-* Constructors                        *
-***************************************
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=  Employee Class                                        -=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 */
+//#########################################
+//  Constructors
+//#########################################
 
 Employee::Employee()
 	: name{"Default name"}, id{"00000-0"}, phone{"888-888-8888"}, age{20}, gender{"None"}, jobTitle{"Default Title"}, salary{0}, hireDate{Date()} {} 
 Employee::Employee(string n, string i, string p, int a, string g, string jt, int s, Date d)
 	: name{n}, id{i}, phone{p}, age{a}, gender{g}, jobTitle{jt}, salary{s}, hireDate{d} {}
 
-/*
-***************************************
-* Member Function Definitions         *
-***************************************
-*/
+//#########################################
+//  Member Functions
+//#########################################
 
 //--------------------------
 // Accessors
@@ -73,6 +70,9 @@ void Employee::addAge (int years) {
 	cout << this->name << "'s age increased by " << years << " years." << endl;
 }
 
+//--------------------------
+//  Helper Functions
+//--------------------------
 
 void Employee::print() {
 	cout << "Name: " << name << endl;
@@ -87,6 +87,10 @@ void Employee::print() {
 	return;
 }
 
+//--------------------------
+//  Operator Overloading
+//--------------------------
+
 void Employee::operator+(int years) {
 	this->age += years;
 	cout << this->name << "'s age increased by " << years << " years." << endl;
@@ -95,6 +99,10 @@ void Employee::operator+(int years) {
 bool Employee::operator==(const Employee& other) const {
 	return (this->phone == other.phone);
 }
+
+//#########################################
+//  Friend Functions
+//#########################################
 
 ostream& operator<<(ostream& lhs, const Employee& rhs) {
 	lhs << "Employee: " << rhs.name << ", " << rhs.jobTitle << endl;

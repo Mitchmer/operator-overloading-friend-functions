@@ -1,17 +1,8 @@
 #include "programmer.h"
 
-/*
-***************************************
-* Constructor Definitions             *
-***************************************
-*/
-
-//---------------------------
-// Default Constructor
-//---------------------------
-// Initializes each member
-//   to a basic default value
-//---------------------------
+//#########################################
+//  Constructors
+//#########################################
 
 Programmer::Programmer() 
     : Employee(), department{0}, supervisor{"None"}, percentSalaryIncrease{0.0}, knowsCPP{false}, knowsJava{false} {}
@@ -19,12 +10,9 @@ Programmer::Programmer()
 Programmer::Programmer(string name, string id, string phone, int age, string gender, string jobTitle, int salary, Date date, int department, string supervisor, float percentSalaryIncrease, bool knowsCPP, bool knowsJava)
     : Employee{name, id, phone, age, gender, jobTitle, salary, date}, department{department}, supervisor{supervisor}, percentSalaryIncrease{percentSalaryIncrease}, knowsCPP{knowsCPP}, knowsJava{knowsJava} {}
 
-
-/*
-***************************************
-* Member Function Definitions         *
-***************************************
-*/
+//#########################################
+//  Member Functions
+//#########################################
 
 //--------------------------
 //  Mutators
@@ -37,15 +25,7 @@ void Programmer::changeKnowsCPP(bool cpp) {knowsCPP = cpp;}
 void Programmer::changeKnowsJava(bool java) {knowsJava = java;}
 
 //-------------------------------
-//  Print
-//-------------------------------
-// Prints the values of each
-//   member to the user
-//-------------------------------
-// Pre-Condition: each member
-//   must be populated
-// Post-Condition: members are
-//   printed to the user
+//  Helper Functions
 //-------------------------------
 
 void Programmer::print() {  // Overrides the parent Employee print function
@@ -65,9 +45,9 @@ void Programmer::print() {  // Overrides the parent Employee print function
             cout << "No" << endl;
 }
 
-//***************************************
-// Friend Functions                    
-//***************************************
+//#########################################
+//  Friend Functions
+//#########################################
 
 bool operator==(const Programmer& lhs, const Employee& rhs){
 	return lhs.getPhone() == rhs.getPhone();

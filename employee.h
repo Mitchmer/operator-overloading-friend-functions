@@ -14,14 +14,50 @@ using namespace std;
 */
 class Date {
 	public:
-		/*
-		***************************************
-		* Constructors                        *
-		***************************************
-		*/
+		//#########################################
+		//  Constructors
+		//#########################################
+
+		//-------------------------------------------------------
+		//  Default Date Constructor                            -
+		//-------------------------------------------------------
+		// Initializes a Date object with default data member   -
+		// values                                               -
+		//-------------------------------------------------------
+		// Pre-Condition: N/A                                   -
+		// Post-Condition: A new Employee object will be        -
+		// 	initialized with the following values:          -
+		//	Month: 1                                        -
+		//	Day: 1                                          -
+		//	Year: 2000                                      -
+		//-------------------------------------------------------
 		Date();
+
+		//-------------------------------------------------------
+		//  Alternate Date Constructor                          -
+		//-------------------------------------------------------
+		// Initializes a Date object where each data member     -
+		// has been defined from its arguments                  -
+		//-------------------------------------------------------
+		// Pre-Condition: Requires a valid corresponding data   -
+		//	value for each argument                         -
+		// Post-Condition: Using each value from the given      -
+		// 	arguments, a new Date object is created, with   -
+		//	all data members populated.                     -
+		//-------------------------------------------------------
 		Date(int month, int day, int year);
 
+		//-------------------------------------------------------
+		//  Display Date                                        -
+		//-------------------------------------------------------
+		// Displays the date to the client in the format        -
+		// month/day/year                                       -
+		//-------------------------------------------------------
+		// Pre-Condition: Requires all data members initialized -
+		// 	with valid integers                             -
+		// Post-Condition: Displays a string to the client      -
+		// 	using the format month/day/year                 -
+		//-------------------------------------------------------
 		void displayDate();
 	private:
 		int month;
@@ -38,7 +74,12 @@ class Date {
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 */
 
-class Employee {	
+class Employee {
+
+	//#########################################
+	//  Friend Functions
+	//#########################################	
+
 	//-------------------------------------------------------
 	//  Ostream << Overload Friend Function                 -
 	//-------------------------------------------------------
@@ -72,14 +113,12 @@ class Employee {
 
 	public:
 
-		/*
-		***************************************
-		* Constructors                        *
-		***************************************
-		*/
+		//#########################################
+		// Constructors
+		//#########################################
 
 		//-------------------------------------------------------
-		//  Default Constructor                                 -
+		//  Default Employee Constructor                        -
 		//-------------------------------------------------------
 		// Initializes an Employee object with default data     -
 		// member values                                        -
@@ -99,7 +138,7 @@ class Employee {
 		Employee();
 
 		//-------------------------------------------------------
-		//  Alternate Constructor                               -
+		//  Alternate Employee  Constructor                     -
 		//-------------------------------------------------------
 		// Initializes an Employee object where each data member-
 		// has been defined from its arguments                  -
@@ -112,22 +151,20 @@ class Employee {
 		//-------------------------------------------------------
 		Employee(string name, string id, string phone, int age, string gender, string jobTitle, int salary, Date date);
 
-		/*
-		***************************************
-		* Member Functions                    *
-		***************************************
-		*/
+		//#########################################
+		//  Member Functions
+		//#########################################
 
-		//--------------------------
+		//==========================
 		// Accessors
-		//--------------------------
+		//==========================
 
 		string getPhone() const;
 		int getSalary() const;
 
-		//--------------------------
-		//  Mutators
-		//--------------------------
+		//==========================
+		// Mutators
+		//==========================
 
 		void changeName(string name);
 		void changeID(string id);
@@ -152,6 +189,10 @@ class Employee {
 		//-------------------------------------------------------
 		void addAge (int years);
 
+		//==========================
+		// Helper Functions
+		//==========================
+
 		//-------------------------------------------------------
 		//  Print                                               -
 		//-------------------------------------------------------
@@ -164,6 +205,10 @@ class Employee {
 		//-------------------------------------------------------
 		void print();
 
+		//==========================
+		// Operator Overloading
+		//==========================
+		
 		/*
 		---------------------------------------------------------
 		- Equality == Operator (Member Function)                -
