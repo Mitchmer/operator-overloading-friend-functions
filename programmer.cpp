@@ -64,3 +64,11 @@ void Programmer::print() {  // Overrides the parent Employee print function
         else
             cout << "No" << endl;
 }
+
+//***************************************
+// Friend Functions                    
+//***************************************
+
+bool operator==(const Programmer& lhs, const Employee& rhs){
+	return lhs.getPhone() == rhs.getPhone();
+}

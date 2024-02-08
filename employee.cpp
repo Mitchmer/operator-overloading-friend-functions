@@ -29,16 +29,9 @@ void Date::displayDate() {
 
 /*
 ***************************************
-* Constructor Definitions             *
+* Constructors                        *
 ***************************************
 */
-
-//---------------------------
-// Default Constructor
-//---------------------------
-// Initializes each member
-//   to a basic default value
-//---------------------------
 
 Employee::Employee()
 	: name{"Default name"}, id{"00000-0"}, phone{"888-888-8888"}, age{20}, gender{"None"}, jobTitle{"Default Title"}, salary{0}, hireDate{Date()} {} 
@@ -52,6 +45,17 @@ Employee::Employee(string n, string i, string p, int a, string g, string jt, int
 */
 
 //--------------------------
+// Accessors
+//--------------------------
+
+string Employee::getPhone() const{
+	return phone;
+}
+
+int Employee::getSalary() const{
+	return salary;
+}
+//--------------------------
 //  Mutators
 //--------------------------
 
@@ -63,6 +67,11 @@ void Employee::changeGender(string g) {gender = g;};
 void Employee::changeJobTitle(string jt) {jobTitle = jt;}
 void Employee::changeSalary(int s) {salary = s;}
 void Employee::changeHireDate(Date d) {hireDate = d;}
+
+void Employee::addAge (int years) {
+	this->age += years;
+	cout << this->name << "'s age increased by " << years << " years." << endl;
+}
 
 
 void Employee::print() {
@@ -78,16 +87,25 @@ void Employee::print() {
 	return;
 }
 
+void Employee::operator+(int years) {
+	this->age += years;
+	cout << this->name << "'s age increased by " << years << " years." << endl;
+}
+
 bool Employee::operator==(const Employee& other) const {
 	return (this->phone == other.phone);
-
 }
 
-//***************************************
-// Friend Functions                    
-//***************************************
-
-bool operator==(const Employee& lhs, const Programmer& rhs){
-	return lhs.phone == rhs.phone;
+ostream& operator<<(ostream& lhs, const Employee& rhs) {
+	lhs << "Employee: " << rhs.name << ", " << rhs.jobTitle << endl;
+	return lhs;
 }
+
+istream& operator>>(istream& lhs, Employee& rhs) {
+	int salaryNum {};
+	lhs >> salaryNum;
+	rhs.salary = salaryNum;
+	return lhs;
+}
+
 
