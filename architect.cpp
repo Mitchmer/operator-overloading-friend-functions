@@ -16,11 +16,8 @@
 Architect::Architect()
     : Employee(), department{0}, supervisor{"None"}, percentSalaryIncrease{0.0}, yearsExperienceDesign{0} {}
 
-
-
 Architect::Architect(string name, string id, string phone, int age, string gender, string jobTitle, int salary, Date date, int department, string supervisor, float percentSalaryIncrease, int yearsExperienceDesign)
     : Employee{name, id, phone, age, gender, jobTitle, salary, date}, department{department}, supervisor{supervisor}, percentSalaryIncrease{percentSalaryIncrease}, yearsExperienceDesign{yearsExperienceDesign} {}
-
 
 /*
 ***************************************

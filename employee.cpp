@@ -64,17 +64,6 @@ void Employee::changeJobTitle(string jt) {jobTitle = jt;}
 void Employee::changeSalary(int s) {salary = s;}
 void Employee::changeHireDate(Date d) {hireDate = d;}
 
-//-------------------------------
-//  Print
-//-------------------------------
-// Prints the values of each
-//   member to the user
-//-------------------------------
-// Pre-Condition: each member
-//   must be populated
-// Post-Condition: members are
-//   printed to the user
-//-------------------------------
 
 void Employee::print() {
 	cout << "Name: " << name << endl;
@@ -88,3 +77,17 @@ void Employee::print() {
 	hireDate.displayDate();
 	return;
 }
+
+bool Employee::operator==(const Employee& other) const {
+	return (this->phone == other.phone);
+
+}
+
+//***************************************
+// Friend Functions                    
+//***************************************
+
+bool operator==(const Employee& lhs, const Programmer& rhs){
+	return lhs.phone == rhs.phone;
+}
+

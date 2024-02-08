@@ -17,7 +17,7 @@ architect.o: architect.cpp architect.h
 	$(CC) $(FLAGS) -c architect.cpp -o architect.o
 
 clean:
-	rm -f *.o hw04 hw04.tar
+	del -f *.o hw04 hw04.tar
 
 tar:
 	tar cf hw04.tar hw04.scr Makefile hw04.cpp employee.h employee.cpp programmer.h programmer.cpp architect.h architect.cpp
