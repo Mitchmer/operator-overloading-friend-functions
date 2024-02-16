@@ -28,7 +28,7 @@ void Programmer::changeKnowsJava(bool java) {knowsJava = java;}
 //  Helper Functions
 //-------------------------------
 
-void Programmer::print() {  // Overrides the parent Employee print function
+void Programmer::print() const {  // Overrides the parent Employee print function
     Employee::print();  // Prints the members of the parent Employee class
     cout << "Department: " << department << endl;
 	cout << "Supervisor: " << supervisor << endl;

@@ -58,7 +58,7 @@ class Date {
 		// Post-Condition: Displays a string to the client      -
 		// 	using the format month/day/year                 -
 		//-------------------------------------------------------
-		void displayDate();
+		void displayDate() const;
 	private:
 		int month;
 		int day;
@@ -67,10 +67,10 @@ class Date {
 
 /*
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
--=  Employee Class                                        -=
+-= Employee Class                                         -=
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
--=  Holds information of an employee, such as name, age,  -=
--=    and other relevant information                      -=
+-= Holds information of an employee, such as name, age,   -=
+-= and other relevant information                         -=
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 */
 
@@ -203,7 +203,7 @@ class Employee {
 		// Post-Condition: each of the object's data members    -
 		//	are printed to the user                         -
 		//-------------------------------------------------------
-		void print();
+		void print() const;
 
 		//==========================
 		// Operator Overloading

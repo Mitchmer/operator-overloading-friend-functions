@@ -18,7 +18,7 @@ Date::Date(int m, int d, int y)
 //  Member Functions
 //#########################################
 
-void Date::displayDate() {
+void Date::displayDate() const {
 	cout << month << "/" << day << "/" << year << endl;
 	return;
 }
@@ -74,7 +74,7 @@ void Employee::addAge (int years) {
 //  Helper Functions
 //--------------------------
 
-void Employee::print() {
+void Employee::print() const {
 	cout << "Name: " << name << endl;
 	cout << "ID: " << id << endl;
 	cout << "Phone: " << phone << endl;

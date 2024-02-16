@@ -14,7 +14,7 @@ programmer.o: programmer.cpp programmer.h
 	$(CC) $(FLAGS) -c programmer.cpp -o programmer.o
 
 clean:
-	del -f *.o *.exe hw04 hw04.tar
+	rm -f *.o *.exe hw04 hw04.tar
 
 tar:
 	tar cf hw04.tar hw04.scr Makefile hw04.cpp employee.h employee.cpp programmer.h programmer.cpp

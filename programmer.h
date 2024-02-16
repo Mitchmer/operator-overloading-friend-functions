@@ -96,7 +96,7 @@ class Programmer : public Employee {
 		// Post-Condition: each of the object's data members    -
 		//	are printed to the user                         -
 		//-------------------------------------------------------
-		void print();
+		void print() const;
 
 	private:
 		//#########################################
